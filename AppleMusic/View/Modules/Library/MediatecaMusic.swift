@@ -12,6 +12,7 @@ struct MediatecaMusic: View {
         VStack {
             Text("Ищите свою музыку?")
                 .font(.title)
+                .fontWeight(.bold)
             Text("Здесь появится купленная Вами в iTunes Store музыка")
                 .font(.title3)
                 .padding([.leading, .trailing], 28)
@@ -21,9 +22,6 @@ struct MediatecaMusic: View {
         .padding()
         .frame(height: 600)
         .navigationTitle("Медиатека")
-        HStack {
-            TabBar()
-        }
     }
 }
 

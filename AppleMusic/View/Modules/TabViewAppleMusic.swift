@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct TabBar: View {
+struct TabViewAppleMusic: View {
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
             TabView {
-                Text("")
+                LibraryView()
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Медиатека")
@@ -27,7 +27,13 @@ struct TabBar: View {
                         Text("Поиск")
                     }
             }
-            Player()
+            .accentColor(.red)
+            PlayerView()
         })
+    }
+}
+struct TabView_Previews: PreviewProvider {
+    static var previews: some View {
+        TabViewAppleMusic()
     }
 }

@@ -28,7 +28,7 @@ struct Library: View {
                             Text(model.title)
                                 .foregroundColor(.black)
                                 .font(.system(size: 23))
-                                .bold()
+                                .fontWeight(.medium)
                         }
                     }
                     .onMove(perform: move)
@@ -37,10 +37,6 @@ struct Library: View {
                 .listStyle(PlainListStyle())
             }
             .environment(\.editMode, $isEditMode)
-            
-            HStack {
-                TabBar()
-            }
         }
     }
     

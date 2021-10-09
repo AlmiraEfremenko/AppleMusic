@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  LibraryView.swift
 //  AppleMusic
 //
-//  Created by MAC on 04.10.2021.
+//  Created by MAC on 09.10.2021.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct LibraryView: View {
     
     @State var showScreen = false
     
@@ -37,12 +37,11 @@ struct ContentView: View {
             })
         }
         .navigationBarBackButtonHidden(true)
-        .accentColor(.red)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LibraryView()
     }
 }
