@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct Player: View {
+struct PlayerView: View {
+    
+    @State var showDetails = false
+    
     var body: some View {
         HStack {
             Image("картинка")
@@ -17,15 +20,29 @@ struct Player: View {
             Text("Justin Bieber - Peaches")
             Spacer()
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                self.showDetails.toggle()
+            }, label: {
                 Image(systemName: "play.fill")
+                    .resizable()
                     .foregroundColor(.black)
+                    .frame(width: 18, height: 18)
+                    .scaledToFit()
             })
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Spacer()
+                .frame(width: 13)
+            
+            Button(action: {
+                self.showDetails.toggle()
+            }, label: {
                 Image(systemName: "forward.fill")
+                    .resizable()
                     .foregroundColor(.black)
+                    .frame(width: 25, height: 20)
+                    .scaledToFit()
             })
+            .padding(5)
         }
         .padding()
         .frame(height: 70)
@@ -38,8 +55,8 @@ struct Player: View {
     }
 }
 
-struct Player_Previews: PreviewProvider {
+struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        Player()
+        PlayerView()
     }
 }
