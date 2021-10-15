@@ -16,7 +16,7 @@ struct TabViewAppleMusic: View {
                         Image(systemName: "house.fill")
                         Text("Медиатека")
                     }
-                Text("")
+               RadioView()
                     .tabItem {
                         Image(systemName: "dot.radiowaves.left.and.right")
                         Text("Радио")
