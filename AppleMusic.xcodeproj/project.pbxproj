@@ -9,7 +9,12 @@
 /* Begin PBXBuildFile section */
 		0439BC60270DD790001E0EBE /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439BC5F270DD790001E0EBE /* Library.swift */; };
 		0439BC64270DD8CB001E0EBE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439BC63270DD8CB001E0EBE /* Model.swift */; };
+		043A557C27194661002C5BD7 /* RadioViewPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A557B27194661002C5BD7 /* RadioViewPlaylist.swift */; };
+		043A557E27194858002C5BD7 /* RadioViewStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A557D27194858002C5BD7 /* RadioViewStation.swift */; };
+		043A55802719CC88002C5BD7 /* ModelRadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A557F2719CC88002C5BD7 /* ModelRadioStation.swift */; };
 		043C4E63270F4290001247EF /* MediatecaMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C4E62270F4290001247EF /* MediatecaMusic.swift */; };
+		0446BF8227187020004812FE /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446BF8127187020004812FE /* RadioView.swift */; };
+		0446BF8427188568004812FE /* ModelRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446BF8327188568004812FE /* ModelRadio.swift */; };
 		044B6A07270C0A730079C32C /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B6A06270C0A730079C32C /* PlayerView.swift */; };
 		044B6A09270C0B690079C32C /* TabViewAppleMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B6A08270C0B690079C32C /* TabViewAppleMusic.swift */; };
 		044B6A0B270C111B0079C32C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B6A0A270C111B0079C32C /* BlurView.swift */; };
@@ -23,7 +28,12 @@
 /* Begin PBXFileReference section */
 		0439BC5F270DD790001E0EBE /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		0439BC63270DD8CB001E0EBE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		043A557B27194661002C5BD7 /* RadioViewPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewPlaylist.swift; sourceTree = "<group>"; };
+		043A557D27194858002C5BD7 /* RadioViewStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewStation.swift; sourceTree = "<group>"; };
+		043A557F2719CC88002C5BD7 /* ModelRadioStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRadioStation.swift; sourceTree = "<group>"; };
 		043C4E62270F4290001247EF /* MediatecaMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediatecaMusic.swift; sourceTree = "<group>"; };
+		0446BF8127187020004812FE /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+		0446BF8327188568004812FE /* ModelRadio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRadio.swift; sourceTree = "<group>"; };
 		044B6A06270C0A730079C32C /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		044B6A08270C0B690079C32C /* TabViewAppleMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewAppleMusic.swift; sourceTree = "<group>"; };
 		044B6A0A270C111B0079C32C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
@@ -51,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				0439BC63270DD8CB001E0EBE /* Model.swift */,
+				0446BF8327188568004812FE /* ModelRadio.swift */,
+				043A557F2719CC88002C5BD7 /* ModelRadioStation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -58,11 +70,32 @@
 		043C4E65270F7E80001247EF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0446BF8027186FF3004812FE /* Radio */,
+				0446BF7F27186F83004812FE /* Player */,
 				045261452711C5B200967D8A /* Library */,
 				044B6A08270C0B690079C32C /* TabViewAppleMusic.swift */,
 				044C40C6270B2C8800070918 /* ContentView.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		0446BF7F27186F83004812FE /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				044B6A06270C0A730079C32C /* PlayerView.swift */,
+				044B6A0A270C111B0079C32C /* BlurView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		0446BF8027186FF3004812FE /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				0446BF8127187020004812FE /* RadioView.swift */,
+				043A557B27194661002C5BD7 /* RadioViewPlaylist.swift */,
+				043A557D27194858002C5BD7 /* RadioViewStation.swift */,
+			);
+			path = Radio;
 			sourceTree = "<group>";
 		};
 		044C40B8270B2C8800070918 = {
@@ -115,8 +148,6 @@
 			children = (
 				0439BC5F270DD790001E0EBE /* Library.swift */,
 				043C4E62270F4290001247EF /* MediatecaMusic.swift */,
-				044B6A06270C0A730079C32C /* PlayerView.swift */,
-				044B6A0A270C111B0079C32C /* BlurView.swift */,
 				045261422711C4CC00967D8A /* LibraryView.swift */,
 			);
 			path = Library;
@@ -194,11 +225,16 @@
 				0439BC64270DD8CB001E0EBE /* Model.swift in Sources */,
 				044C40C7270B2C8800070918 /* ContentView.swift in Sources */,
 				044B6A07270C0A730079C32C /* PlayerView.swift in Sources */,
+				0446BF8427188568004812FE /* ModelRadio.swift in Sources */,
 				044B6A0B270C111B0079C32C /* BlurView.swift in Sources */,
+				0446BF8227187020004812FE /* RadioView.swift in Sources */,
+				043A557E27194858002C5BD7 /* RadioViewStation.swift in Sources */,
 				045261432711C4CC00967D8A /* LibraryView.swift in Sources */,
+				043A55802719CC88002C5BD7 /* ModelRadioStation.swift in Sources */,
 				044C40C5270B2C8800070918 /* AppleMusicApp.swift in Sources */,
 				043C4E63270F4290001247EF /* MediatecaMusic.swift in Sources */,
 				044B6A09270C0B690079C32C /* TabViewAppleMusic.swift in Sources */,
+				043A557C27194661002C5BD7 /* RadioViewPlaylist.swift in Sources */,
 				0439BC60270DD790001E0EBE /* Library.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
