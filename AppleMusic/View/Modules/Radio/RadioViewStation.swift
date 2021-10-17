@@ -29,6 +29,7 @@ struct RadioViewStation: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 100)
+                            .cornerRadius(10)
                         VStack(alignment: .leading) {
                             Text(modelRadio.title)
                                 .foregroundColor(.black)

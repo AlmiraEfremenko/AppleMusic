@@ -20,19 +20,24 @@ struct RadioViewPlaylist: View {
             LazyHGrid(rows: rows) {
                 ForEach(modelsRadio, id: \.id) { modelRadio in
                     VStack(alignment: .leading) {
-                        Text(modelRadio.title)
+                        Text(modelRadio.titleRadiostation)
                             .foregroundColor(.secondary)
                             .fontWeight(.medium)
-                            .font(.system(size: 16))
-                        Text(modelRadio.subtitle)
+                            .font(.system(size: 18))
+                        Text(modelRadio.title)
                             .foregroundColor(.black)
                             .fontWeight(.regular)
-                            .font(.system(size: 25))
+                            .font(.system(size: 23))
+                        Text(modelRadio.subtitle)
+                            .foregroundColor(.secondary)
+                            .fontWeight(.medium)
+                            .font(.system(size: 18))
                         Spacer()
-                            .frame(height: 10)
+                            .frame(height: 15)
                         Image(modelRadio.image)
                             .resizable()
                             .frame(width: 370)
+                            .cornerRadius(10)
                     }
                 }
             }
