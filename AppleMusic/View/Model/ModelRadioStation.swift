@@ -18,12 +18,12 @@ struct ModelRadioStation: Identifiable, Hashable {
 extension ModelRadioStation {
     
     static let data = [
-        ModelRadioStation(image: "популярное", title: "Популярное", subtitle: "То, что слушают прямо сейчас."),
-        ModelRadioStation(image: "classic", title: "Классика", subtitle: "Выдающиеся образцы жанра."),
-        ModelRadioStation(image: "chill1", title: "Для расслабления", subtitle: "Электронная медитация."),
-        ModelRadioStation(image: "rock", title: "Классика рokа", subtitle: "Гитарный звук."),
-        ModelRadioStation(image: "hip-hop", title: "Хип-хоп", subtitle: "Идеальные биты."),
-        ModelRadioStation(image: "dfmdisco90", title: "Музыка 90-х", subtitle: "Зажигай."),
-        ModelRadioStation(image: "rnb", title: "RnB", subtitle: "Будь в движении.")
+        ModelRadio(image: "популярное", title: "Популярное", subtitle: "То, что слушают прямо сейчас."),
+        ModelRadio(image: "classic", title: "Классика", subtitle: "Выдающиеся образцы жанра."),
+        ModelRadio(image: "chill1", title: "Для расслабления", subtitle: "Электронная медитация."),
+        ModelRadio(image: "rock", title: "Классика рokа", subtitle: "Гитарный звук."),
+        ModelRadio(image: "hip-hop", title: "Хип-хоп", subtitle: "Идеальные биты."),
+        ModelRadio(image: "dfmdisco90", title: "Музыка 90-х", subtitle: "Зажигай."),
+        ModelRadio(image: "rnb", title: "RnB", subtitle: "Будь в движении.")
     ]
 }
