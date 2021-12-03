@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct ModelSearch: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct ModelSearch_Previews: PreviewProvider {
-    static var previews: some View {
-        ModelSearch()
+class ModelSearch: ObservableObject {
+    
+    @Published var searchMediateca = "Ваша Медиатека"
+    @Published var models = ModelRadioStation.data
+    @Published var modelsRadio = ModelRadio.data
+    
+    func changeSearch() {
+        self.searchMediateca = "Альбомы, песни и др..."
     }
 }
