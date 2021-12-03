@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TabViewAppleMusic: View {
+    @State var expand = false
+    @Namespace var animation
+   
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
             TabView {
@@ -21,14 +24,14 @@ struct TabViewAppleMusic: View {
                         Image(systemName: "dot.radiowaves.left.and.right")
                         Text("Радио")
                     }
-                Text("")
+                SearchView()
                     .tabItem {
                         Image(systemName: "magnifyingglass")
                         Text("Поиск")
                     }
             }
             .accentColor(.red)
-            PlayerView()
+            PlayerView(animation: animation, expand: $expand)
         })
     }
 }
