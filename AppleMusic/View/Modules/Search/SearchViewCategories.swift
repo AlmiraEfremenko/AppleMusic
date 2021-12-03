@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct SearchViewCategories: View {
+    @ObservedObject var modelSearch = ModelSearch()
+    var columns = [
+        GridItem(.adaptive(minimum: 200, maximum: 195))]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LazyVGrid(columns: columns, alignment: .leading) {
+            Section(header: Text("Поиск по категориям")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                        .font(.system(size: 20))
+                        .padding(10))
+            {
+                ForEach(modelSearch.models, id: \.id) {
+                    modelSearch in
+                    NavigationLink(destination: SearchDetailScreen()){
+                        Image(modelSearch.image)
+                            .resizable()
+                            .frame(width: 190, height: 140)
+                            .cornerRadius(10)
+                    }}
+                    .padding(10)
+            }
+        }
     }
 }
 
