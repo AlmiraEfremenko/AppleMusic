@@ -9,27 +9,23 @@ import SwiftUI
 
 struct SearchSongsMediateca: View {
     @State var isShowRecentSearch = false
-    @State private var showAppleMusic = false
+    @State private var showDetails = false
     
     var body: some View {
         VStack {
             HStack(spacing: 0.1) {
-                
                 Button(action: {
-                    self.showAppleMusic = true
-                    
+                    self.showDetails.toggle()
                 }, label: {
                     Text("Apple Music")
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                    
                 })
                 .frame(width: 196, height: 43, alignment: .center)
                 .background(Color(.darkGray))
                 .cornerRadius(8)
-                
                 Button(action: {
-                    self.showAppleMusic = false
+                    self.showDetails.toggle()
                 }, label: {
                     Text("Ваша Медиатека")
                         .fontWeight(.medium)
@@ -39,7 +35,6 @@ struct SearchSongsMediateca: View {
                 .background(Color(.black).brightness(0.1))
                 .cornerRadius(8)
             }
-            
         }
     }
 }

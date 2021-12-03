@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct SearchView: View {
+    @ObservedObject var modelSearch = ModelSearch()
+    @State private var text = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView {
+                VStack {
+                    SearchBar(text: $text)
+                }
+                .padding(3)
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+            }
+        }
+        .environment(\.colorScheme, .dark)
+        .accentColor(Color(.red))
     }
 }
 
