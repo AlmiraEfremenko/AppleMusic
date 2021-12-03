@@ -42,8 +42,8 @@ extension ModelRadio {
                    subtitle: "Гитарный звук",
                    titleRadiostation: "Избранная радиостанция"),
         ModelRadio(image: "hip-hop",
-                   title: "Хип-хоп",
-                   subtitle: "Идеальные биты",
+                   title: "Hip-Hop",
+                   subtitle: "Ideal bit",
                    titleRadiostation: "Избранная радиостанция"),
         ModelRadio(image: "dfmdisco90",
                    title: "Музыка 90-х",
@@ -51,7 +51,7 @@ extension ModelRadio {
                    titleRadiostation: "Избранная радиостанция"),
         ModelRadio(image: "rnb",
                    title: "RnB",
-                   subtitle: "Будь в движении",
+                   subtitle: "Light up",
                    titleRadiostation: "Избранная радиостанция")
     ]
 }
