@@ -12,8 +12,7 @@ struct RadioViewStation: View {
     @State private var modelsRadioStation = ModelRadioStation.data
     
     var columns = [
-        GridItem(.flexible())
-    ]
+        GridItem(.flexible())]
     
     var body: some View {
         LazyVGrid(columns: columns, alignment: .leading) {
