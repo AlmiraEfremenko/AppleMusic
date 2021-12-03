@@ -24,6 +24,6 @@ extension ModelRadioStation {
         ModelRadioStation(image: "rock", title: "Классика рokа", subtitle: "Гитарный звук."),
         ModelRadioStation(image: "hip-hop", title: "Хип-хоп", subtitle: "Идеальные биты."),
         ModelRadioStation(image: "dfmdisco90", title: "Музыка 90-х", subtitle: "Зажигай."),
-        ModelRadioStation(image: "rnb", title: "RnB", subtitle: "Будь в движении.")
+        ModelRadioStation(image: "rnb", title: "RnB", subtitle: "Будь в движении")
     ]
 }
