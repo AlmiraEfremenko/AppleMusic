@@ -15,12 +15,12 @@ struct MediatecaMusic: View {
                 .fontWeight(.bold)
             Text("Здесь появится купленная Вами в iTunes Store музыка")
                 .font(.title3)
-                .padding([.leading, .trailing], 28)
+                .padding([.leading, .trailing], MetricMediateca.paddingText)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
         }
         .padding()
-        .frame(height: 600)
+        .frame(height: MetricMediateca.heightFrame)
         .navigationTitle("Медиатека")
     }
 }
@@ -29,4 +29,10 @@ struct MediatecaMusic_Previews: PreviewProvider {
     static var previews: some View {
         MediatecaMusic()
     }
+}
+
+struct MetricMediateca {
+    
+    static let paddingText: CGFloat = 28
+    static let heightFrame: CGFloat = 600
 }

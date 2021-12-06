@@ -17,12 +17,11 @@ struct SearchView: View {
                 VStack {
                     SearchBar(text: $text)
                 }
-                .padding(3)
+                .padding(MetricSearchView.paddingSearchView)
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
             }
         }
-        .environment(\.colorScheme, .dark)
         .accentColor(Color(.red))
     }
 }
@@ -31,4 +30,9 @@ struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()
     }
+}
+
+struct MetricSearchView {
+    
+    static let paddingSearchView: CGFloat = 3
 }

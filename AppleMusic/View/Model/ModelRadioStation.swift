@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ModelRadioStation: Identifiable, Hashable {
     let id = UUID()
     var image: String
