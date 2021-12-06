@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchDetailScreen: View {
     @ObservedObject var modelSearch = ModelSearch()
     @State private var rows = [
-        GridItem(.fixed(320))]
+        GridItem(.fixed(MetricDetailScreen.sizeItemInRow))]
     
     var body: some View {
         ScrollView {
@@ -23,35 +23,35 @@ struct SearchDetailScreen: View {
                                     Text(modelRadio.title)
                                         .foregroundColor(.secondary)
                                         .fontWeight(.medium)
-                                        .font(.system(size: 18))
+                                        .font(.system(size: MetricDetailScreen.sizeFontText))
                                     Text(modelRadio.title)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.black)
                                         .fontWeight(.regular)
-                                        .font(.system(size: 23))
+                                        .font(.system(size: MetricDetailScreen.sizeFontTextTitle))
                                     Text(modelRadio.subtitle)
                                         .foregroundColor(.secondary)
                                         .fontWeight(.medium)
-                                        .font(.system(size: 20))
+                                        .font(.system(size: MetricDetailScreen.sizeFontTextSubtitle))
                                     Spacer()
-                                        .frame(height: 15)
+                                        .frame(height: MetricDetailScreen.heightFrameSpacer)
                                     Image(modelRadio.image)
                                         .resizable()
-                                        .frame(width: 380)
-                                        .cornerRadius(10)
+                                        .frame(width: MetricDetailScreen.widthFrameImage)
+                                        .cornerRadius(MetricDetailScreen.cornerRadiusFrameImage)
                                 }
                             }
                         }
                         .padding()
                     }
                 }
-                .padding(.top, 20)
-                HStack(spacing: 221) {
+                .padding(.top, MetricDetailScreen.paddingHStack)
+                HStack(spacing: MetricDetailScreen.spacingHStack) {
                     Text("Станции")
-                        .font(.system(size: 23))
-                        .foregroundColor(.white)
+                        .font(.system(size: MetricDetailScreen.sizeFontTextTitle))
+                        .foregroundColor(.black)
                         .fontWeight(.bold)
                     Text("Cм.все")
-                        .font(.system(size: 16))
+                        .font(.system(size: MetricDetailScreen.sizeFontTextFollow))
                         .foregroundColor(.red)
                         .fontWeight(.medium)
                 }
@@ -62,21 +62,23 @@ struct SearchDetailScreen: View {
                                 Image(modelRadio.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 185)
-                                    .cornerRadius(10)
+                                    .frame(width: MetricDetailScreen.widthFrameImageHorizontal)
+                                    .cornerRadius(MetricDetailScreen.cornerRadiusFrameImage)
                             }
                         }
                         .padding()
                     }
                 }
-                .frame (height: 200)
-                .offset(y: -12)
+                .frame (height: MetricDetailScreen.heightFrameHStacke)
+                .offset(y: MetricDetailScreen.offsetHStacke)
             }
-            .offset(y: -20)
+            .offset(y: MetricDetailScreen.offsetVStacke)
             .navigationTitle("Зимнее время")
             .navigationBarItems(
                 trailing:
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        print("Нажать подробнее")
+                    }, label: {
                         Image(systemName: "ellipsis")
                             .foregroundColor(.red)
                     })
@@ -89,4 +91,22 @@ struct SearchDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
         SearchDetailScreen()
     }
+}
+
+struct MetricDetailScreen {
+    
+    static let sizeItemInRow: CGFloat = 320
+    static let sizeFontText: CGFloat = 18
+    static let sizeFontTextTitle: CGFloat = 23
+    static let sizeFontTextSubtitle: CGFloat = 20
+    static let heightFrameSpacer: CGFloat = 15
+    static let widthFrameImage: CGFloat = 380
+    static let cornerRadiusFrameImage: CGFloat = 10
+    static let paddingHStack: CGFloat = 20
+    static let spacingHStack: CGFloat = 221
+    static let sizeFontTextFollow: CGFloat = 16
+    static let widthFrameImageHorizontal: CGFloat = 185
+    static let heightFrameHStacke: CGFloat = 200
+    static let offsetHStacke: CGFloat = -12
+    static let offsetVStacke: CGFloat = -20
 }

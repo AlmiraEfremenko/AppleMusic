@@ -10,25 +10,25 @@ import SwiftUI
 struct SearchViewCategories: View {
     @ObservedObject var modelSearch = ModelSearch()
     var columns = [
-        GridItem(.adaptive(minimum: 200, maximum: 195))]
+        GridItem(.adaptive(minimum: MetricSearchViewCategories.sizeItemMinimum, maximum: MetricSearchViewCategories.sizeItemMaximum))]
     
     var body: some View {
         LazyVGrid(columns: columns, alignment: .leading) {
             Section(header: Text("Поиск по категориям")
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .fontWeight(.bold)
-                        .font(.system(size: 20))
-                        .padding(10))
+                        .font(.system(size: MetricSearchViewCategories.sizeFontText))
+                        .padding(MetricSearchViewCategories.paddingText))
             {
                 ForEach(modelSearch.models, id: \.id) {
                     modelSearch in
                     NavigationLink(destination: SearchDetailScreen()){
                         Image(modelSearch.image)
                             .resizable()
-                            .frame(width: 190, height: 140)
-                            .cornerRadius(10)
+                            .frame(width: MetricSearchViewCategories.widthImage, height: MetricSearchViewCategories.heightImage)
+                            .cornerRadius(MetricSearchViewCategories.cornerRadiusImage)
                     }}
-                    .padding(10)
+                    .padding(MetricSearchViewCategories.paddingText)
             }
         }
     }
@@ -38,4 +38,15 @@ struct SearchViewCategories_Previews: PreviewProvider {
     static var previews: some View {
         SearchViewCategories()
     }
+}
+
+struct MetricSearchViewCategories {
+    
+    static let sizeItemMinimum: CGFloat = 200
+    static let sizeItemMaximum: CGFloat = 195
+    static let sizeFontText: CGFloat = 20
+    static let paddingText: CGFloat = 10
+    static let widthImage: CGFloat = 190
+    static let heightImage: CGFloat = 140
+    static let cornerRadiusImage: CGFloat = 10
 }

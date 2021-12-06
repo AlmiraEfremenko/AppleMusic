@@ -16,19 +16,19 @@ struct SearchAlbumSongs: View {
     var body: some View {
         LazyVGrid(columns: columns, alignment: .leading) {
             ForEach(modelSearch.models.filter({"\($0)".contains(text) || text.isEmpty }), id: \.id) { item in
-                HStack(spacing: 10) {
+                HStack(spacing: MetricButtonAlbumsMedia.spacingHStack) {
                     Image(item.image)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 70)
-                        .cornerRadius(10)
+                        .frame(width: MetricButtonAlbumsMedia.widthFrameImage)
+                        .cornerRadius(MetricButtonAlbumsMedia.cornerRadiusImage)
                     VStack(alignment: .leading) {
                         Text("\(item.title)")
                             .fontWeight(.medium)
-                            .font(.system(size: 17))
+                            .font(.system(size: MetricButtonAlbumsMedia.sizeFontTitle))
                         Text("\(item.subtitle)")
                             .foregroundColor(.gray)
-                            .font(.system(size: 13))
+                            .font(.system(size: MetricButtonAlbumsMedia.sizeFontSubTitle))
                     }
                     Spacer()
                     Button(action: {
@@ -37,7 +37,7 @@ struct SearchAlbumSongs: View {
                         Image(systemName: "arrow.down.circle.fill")
                             .foregroundColor(.secondary)
                             .padding(.top)
-                            .padding(.trailing, 5)
+                            .padding(.trailing, MetricButtonAlbumsMedia.paddingImage)
                     })
                     Button(action: {
                         print("Детали")
@@ -49,23 +49,23 @@ struct SearchAlbumSongs: View {
                     })
                 }
                 Divider()
-                    .padding(8)
+                    .padding(MetricButtonAlbumsMedia.paddingDivider)
             }
             LazyVGrid(columns: columns, alignment: .leading) {
                 ForEach(modelSearch.modelsRadio.filter({"\($0)".contains(text) || text.isEmpty }), id: \.id) { item in
-                    HStack(spacing: 10) {
+                    HStack(spacing: MetricButtonAlbumsMedia.spacingHStack) {
                         Image(item.image)
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 70)
-                            .cornerRadius(10)
+                            .frame(width: MetricButtonAlbumsMedia.widthFrameImage)
+                            .cornerRadius(MetricButtonAlbumsMedia.cornerRadiusImage)
                         VStack(alignment: .leading) {
                             Text("\(item.title)")
                                 .fontWeight(.medium)
-                                .font(.system(size: 17))
+                                .font(.system(size: MetricButtonAlbumsMedia.sizeFontTitle))
                             Text("\(item.subtitle)")
                                 .foregroundColor(.gray)
-                                .font(.system(size: 13))
+                                .font(.system(size: MetricButtonAlbumsMedia.sizeFontSubTitle))
                         }
                         Spacer()
                         Button(action: {
@@ -78,11 +78,11 @@ struct SearchAlbumSongs: View {
                         })
                     }
                     Divider()
-                        .padding(8)
+                        .padding(MetricButtonAlbumsMedia.paddingDivider)
                 }
             }
         }
-        .padding(6)
+        .padding(MetricButtonAlbumsMedia.paddingLazyVGride)
     }
 }
 
@@ -90,4 +90,16 @@ struct SearchAlbumSongs_Previews: PreviewProvider {
     static var previews: some View {
         SearchAlbumSongs(text: .constant(""))
     }
+}
+
+struct MetricButtonAlbumsMedia {
+    
+    static let spacingHStack: CGFloat = 10
+    static let widthFrameImage: CGFloat = 70
+    static let cornerRadiusImage: CGFloat = 10
+    static let sizeFontTitle: CGFloat = 17
+    static let sizeFontSubTitle: CGFloat = 13
+    static let paddingImage: CGFloat = 5
+    static let paddingDivider: CGFloat = 8
+    static let paddingLazyVGride: CGFloat = 6
 }

@@ -19,19 +19,19 @@ struct SearchBar: View {
             if !isEditing {
                 HStack {
                     Text("Поиск")
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .fontWeight(.bold)
                         .font(.largeTitle)
-                        .frame(width: 380, alignment: .leading)
+                        .frame(width: MetricSearchBar.widthFrameText, alignment: .leading)
                 }
             }
             HStack {
                 TextField(searchTitle.searchMediateca, text: $text)
-                    .padding(12)
-                    .padding(.horizontal, 25)
-                    .background(Color(.black).brightness(0.1))
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .padding(MetricSearchBar.paddingTextField)
+                    .padding(.horizontal, MetricSearchBar.paddingTextFieldHorizontal)
+                    .background(Color(.lightGray).brightness(Double(MetricSearchBar.backgroundTextField)))
+                    .foregroundColor(.black)
+                    .cornerRadius(MetricSearchBar.cornerRadiusTextField)
                     .onTapGesture {
                         self.isEditing = true
                         self.searchTitle.changeSearch()
@@ -39,18 +39,18 @@ struct SearchBar: View {
                     .overlay(
                         HStack {
                             Image(systemName: "magnifyingglass")
-                                .foregroundColor(Color(.lightGray))
-                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                                .padding(.leading, 13)
+                                .foregroundColor(Color(.gray))
+                                .frame(minWidth: MetricSearchBar.frameMinWidthImage, maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, MetricSearchBar.paddingFrameImage)
                             
                             if isEditing {
                                 Button(action: {
                                     self.text = ""
                                 }, label: {
                                     Image(systemName: "xmark.circle.fill")
-                                        .foregroundColor(Color(.lightGray))
-                                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-                                        .padding(.trailing, 13)})}})
+                                        .foregroundColor(Color(.white))
+                                        .frame(minWidth: MetricSearchBar.frameMinWidthImage, maxWidth: .infinity, alignment: .trailing)
+                                        .padding(.trailing, MetricSearchBar.paddingFrameImage)})}})
                 if isEditing {
                     Button(action: {
                             self.isEditing = false
@@ -58,31 +58,31 @@ struct SearchBar: View {
                     {
                         Text("Отменить")
                             .foregroundColor(.red)
-                            .font(.system(size: 20))
+                            .font(.system(size: MetricSearchBar.sizeFontText))
                     }
-                    .padding(.trailing, 0.5)
+                    .padding(.trailing, MetricSearchBar.paddingButton)
                     .transition(.move(edge: .trailing))
                     .animation(.spring())
                 }
             }
-            .padding(8)
+            .padding(MetricSearchBar.paddingHStack)
             if isEditing {
                 SearchSongsMediateca()
                 if text.isEmpty {
-                    HStack(spacing: 170) {
+                    HStack(spacing: MetricSearchBar.spacingHStack) {
                         Text("Недавние поиски")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .fontWeight(.bold)
-                            .font(.system(size: 17))
+                            .font(.system(size: MetricSearchBar.sizeFontTextRecentSearch))
                         Button(action: {
                             self.showDetails.toggle()
                         }, label: {
                             Text("Очистить")
                                 .fontWeight(.bold)
-                                .font(.system(size: 16))
+                                .font(.system(size: MetricSearchBar.sizeFontTextDelete))
                                 .foregroundColor(.red)})
                     }
-                    .padding(.top, 23)
+                    .padding(.top, MetricSearchBar.paddingHStackResentDelete)
                 }
                 Divider()
                 SearchAlbumSongs(text: $text)
@@ -91,7 +91,7 @@ struct SearchBar: View {
                 SearchViewCategories()
             }
         }
-        .offset(y: 30)
+        .offset(y: MetricSearchBar.offsetHStack)
     }
 }
 
@@ -105,4 +105,23 @@ struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
         SearchBar(text: .constant(""))
     }
+}
+
+struct MetricSearchBar {
+    
+    static let widthFrameText: CGFloat = 380
+    static let paddingTextField: CGFloat = 12
+    static let paddingTextFieldHorizontal: CGFloat = 25
+    static let backgroundTextField: CGFloat = 0.1
+    static let cornerRadiusTextField: CGFloat = 10
+    static let frameMinWidthImage: CGFloat = 0
+    static let paddingFrameImage: CGFloat = 13
+    static let sizeFontText: CGFloat = 20
+    static let paddingButton: CGFloat = 0.5
+    static let paddingHStack: CGFloat = 8
+    static let spacingHStack: CGFloat = 170
+    static let sizeFontTextRecentSearch: CGFloat = 17
+    static let sizeFontTextDelete: CGFloat = 16
+    static let paddingHStackResentDelete: CGFloat = 23
+    static let offsetHStack: CGFloat = 30
 }

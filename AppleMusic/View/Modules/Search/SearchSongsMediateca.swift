@@ -13,27 +13,27 @@ struct SearchSongsMediateca: View {
     
     var body: some View {
         VStack {
-            HStack(spacing: 0.1) {
+            HStack(spacing: MetricSearchSongsMedia.spacingHStack) {
                 Button(action: {
                     self.showDetails.toggle()
                 }, label: {
                     Text("Apple Music")
                         .fontWeight(.medium)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 })
-                .frame(width: 196, height: 43, alignment: .center)
-                .background(Color(.darkGray))
-                .cornerRadius(8)
+                .frame(width: MetricSearchSongsMedia.widthFrameButton, height: MetricSearchSongsMedia.heightFrameButton, alignment: .center)
+                .background(Color(.lightGray).brightness(Double(MetricSearchSongsMedia.backgroundButtonApple)))
+                .cornerRadius(MetricSearchSongsMedia.cornerRadiusButton)
                 Button(action: {
                     self.showDetails.toggle()
                 }, label: {
                     Text("Ваша Медиатека")
                         .fontWeight(.medium)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 })
-                .frame(width: 196, height: 43, alignment: .center)
-                .background(Color(.black).brightness(0.1))
-                .cornerRadius(8)
+                .frame(width: MetricSearchSongsMedia.widthFrameButton, height: MetricSearchSongsMedia.heightFrameButton, alignment: .center)
+                .background(Color(.lightGray).brightness(Double(MetricSearchSongsMedia.backgroundButtonMedia)))
+                .cornerRadius(MetricSearchSongsMedia.cornerRadiusButton)
             }
         }
     }
@@ -43,4 +43,14 @@ struct SearchSongs_Previews: PreviewProvider {
     static var previews: some View {
         SearchSongsMediateca()
     }
+}
+
+struct MetricSearchSongsMedia {
+    
+    static let spacingHStack: CGFloat = 0.1
+    static let widthFrameButton: CGFloat = 196
+    static let heightFrameButton: CGFloat = 43
+    static let cornerRadiusButton: CGFloat = 8
+    static let backgroundButtonMedia: CGFloat = 0.1
+    static let backgroundButtonApple: CGFloat = 0.2
 }
