@@ -11,31 +11,31 @@ struct PlayerView: View {
     var animation: Namespace.ID
     @Binding var expand: Bool
     @State var showDetails = false
-    var height = UIScreen.main.bounds.height / 3
+    var height = UIScreen.main.bounds.height / MetricPlayerView.heightScreen
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
-    @State var volume: CGFloat = 0
-    @State var offset: CGFloat = 0
+    @State var volume: CGFloat = MetricPlayerView.volume
+    @State var offset: CGFloat = MetricPlayerView.offset
     
     var body: some View {
         VStack {
             Capsule()
                 .fill(Color.gray)
-                .frame(width: expand ? 30 : 0, height: expand ? 6 : 0)
-                .opacity(expand ? 1 : 0)
-                .padding(.top, expand ? safeArea?.top : 0)
-                .padding(.vertical, expand ? 50 : 0)
+                .frame(width: expand ? MetricPlayerView.widthFrameCapsule : MetricPlayerView.anotherParametr, height: expand ? MetricPlayerView.heightFrameCapsule : MetricPlayerView.anotherParametr)
+                .opacity(Double(expand ? MetricPlayerView.opacityCapsule : MetricPlayerView.anotherParametr))
+                .padding(.top, expand ? safeArea?.top : MetricPlayerView.anotherParametr)
+                .padding(.vertical, expand ? MetricPlayerView.paddingCapsule : MetricPlayerView.anotherParametr)
             HStack {
-                if expand {Spacer(minLength: 0)}
+                if expand {Spacer(minLength: MetricPlayerView.spacerMinLenght)}
                 Image("картинка")
                     .resizable()
-                    .frame(width: expand ? height : 40, height: expand ? height : 40)
+                    .frame(width: expand ? height : MetricPlayerView.widthImage, height: expand ? height : MetricPlayerView.heightImage)
                     .scaledToFit()
-                    .cornerRadius(7)
+                    .cornerRadius(MetricPlayerView.cornerRadiusImage)
                 if !expand {
                     Text("Justin Bieber - Peaches")
                         .matchedGeometryEffect(id: "Label", in: animation)
                 }
-                Spacer(minLength: 0)
+                Spacer(minLength: MetricPlayerView.spacerMinLenght)
                 if !expand {
                     Button(action: {
                         self.showDetails.toggle()
@@ -43,131 +43,145 @@ struct PlayerView: View {
                         Image(systemName: "play.fill")
                             .resizable()
                             .foregroundColor(.black)
-                            .frame(width: 18, height: 18)
+                            .frame(width: MetricPlayerView.widthImagePlayFill, height: MetricPlayerView.heightImagePlayFill)
                             .scaledToFit()
                     })
                     Spacer()
-                        .frame(width: 13)
+                        .frame(width: MetricPlayerView.widthFrameSpacer)
                     Button(action: {
                         self.showDetails.toggle()
                     }, label: {
                         Image(systemName: "forward.fill")
                             .resizable()
                             .foregroundColor(.black)
-                            .frame(width: 25, height: 20)
+                            .frame(width: MetricPlayerView.widthImageForwardFill, height: MetricPlayerView.heightImageForwardFill)
                             .scaledToFit()
                     })
-                    .padding(5)
+                    .padding(MetricPlayerView.padding)
                 }}
                 .padding()
             VStack {
                 if expand {
-                    Spacer(minLength: 0)
-                        .frame(height: 60)
-                    HStack(spacing: 190) {
+                    Spacer(minLength: MetricPlayerView.spacerMinLenght)
+                        .frame(height: MetricPlayerView.spacerFrameHeight)
+                    HStack(spacing: MetricPlayerView.spacingHStack) {
                         VStack(alignment: .leading) {
                             Text("Peaches")
                                 .foregroundColor(.black)
                                 .fontWeight(.bold)
-                                .font(.system(size: 25))
+                                .font(.system(size: MetricPlayerView.sizeFontTextPeaches))
                             Text("Justin Bieber")
                                 .foregroundColor(.black)
                                 .fontWeight(.medium)
-                                .font(.system(size: 23))
+                                .font(.system(size: MetricPlayerView.sizeFontTextJustin))
                                 .matchedGeometryEffect(id: "Label", in: animation)
                         }
-                        Button(action: {}, label: {
+                        Button(action: {
+                            print("Нажата кнопка")
+                        }, label: {
                             Image(systemName: "ellipsis.circle.fill")
                                 .foregroundColor(.gray)
-                                .font(.system(size: 30))
+                                .font(.system(size: MetricPlayerView.sizeFontImageEllipsis))
                         })
                     }
                     HStack {
                         Circle()
                             .fill(Color.white)
-                            .frame(width: 7, height: 7)
-                            .offset(x: 28)
+                            .frame(width: MetricPlayerView.sizeCircle, height: MetricPlayerView.sizeCircle)
+                            .offset(x: MetricPlayerView.offsetCircle)
                         Capsule()
                             .fill(Color.gray)
-                            .frame(height: 4)
-                            .padding(.leading, 20)
-                            .padding(.trailing, 26)
+                            .frame(height: MetricPlayerView.heightCapsule)
+                            .padding(.leading, MetricPlayerView.paddingCapsuleLeading)
+                            .padding(.trailing, MetricPlayerView.paddingCapsuleTrailing)
                         
                     }
-                    HStack(spacing: 310) {
+                    HStack(spacing: MetricPlayerView.spacingHStackText) {
                         Text("0:00")
                             .foregroundColor(.gray)
-                            .font(.system(size: 10))
+                            .font(.system(size: MetricPlayerView.sizeFontText))
                             .fontWeight(.regular)
                         Text("-4:12")
                             .foregroundColor(.gray)
-                            .font(.system(size: 10))
+                            .font(.system(size: MetricPlayerView.sizeFontText))
                             .fontWeight(.regular)
                     }
                     Spacer()
-                        .frame(height: 45)
-                    HStack(spacing: 50) {
-                        Button(action: {}, label: {
+                        .frame(height: MetricPlayerView.frameSpacer)
+                    HStack(spacing: MetricPlayerView.spacingHStackPlay) {
+                        Button(action: {
+                            print("Нажата кнопка")
+                        }, label: {
                             Image(systemName: "backward.fill")
                                 .font(.title)
                                 .foregroundColor(.primary)
                         })
-                        Button(action: {}, label: {
+                        Button(action: {
+                            print("Нажата кнопка")
+                        }, label: {
                             Image(systemName: "play.fill")
-                                .font(.system(size: 40))
+                                .font(.system(size: MetricPlayerView.widthImage))
                                 .foregroundColor(.primary)
                         })
-                        Button(action: {}, label: {
+                        Button(action: {
+                            print("Нажата кнопка")
+                        }, label: {
                             Image(systemName: "forward.fill")
                                 .font(.title)
                                 .foregroundColor(.primary)
                         })
                     }
-                    Spacer(minLength: 0)
-                        .frame(height: 35)
-                    HStack(spacing: 15) {
+                    Spacer(minLength: MetricPlayerView.spacerMinLenght)
+                        .frame(height: MetricPlayerView.spacerFrameHeightSpeaker)
+                    HStack(spacing: MetricPlayerView.spacinhHStackSpeaker) {
                         Image(systemName: "speaker.1.fill")
-                            .padding(.leading, 7)
+                            .padding(.leading, MetricPlayerView.paddingImage)
                         Slider(value: $volume)
                         Image(systemName: "speaker.wave.2.fill")
-                            .padding(.trailing, 7)
+                            .padding(.trailing, MetricPlayerView.paddingImage)
                     }.padding()
-                    HStack(spacing: 70) {
-                        Button(action: {}, label: {
+                    HStack(spacing: MetricPlayerView.spacingTabBarPlayer) {
+                        Button(action: {
+                            print("Нажата кнопка")
+                        }, label: {
                             Image(systemName: "ellipses.bubble")
                                 .font(.title2)
                                 .foregroundColor(.primary)
                         })
-                        Button(action: {}, label: {
+                        Button(action: {
+                            print("Нажата кнопка")
+                        }, label: {
                             Image(systemName: "airplayaudio")
                                 .font(.title2)
                                 .foregroundColor(.primary)
                         })
-                        Button(action: {}, label: {
+                        Button(action: {
+                            print("Нажата кнопка")
+                        }, label: {
                             Image(systemName: "list.dash")
                                 .font(.title2)
                                 .foregroundColor(.primary)
                         })
                     }
-                    .padding(.bottom, safeArea?.bottom == 0 ? 15 : safeArea?.bottom)
+                    .padding(.bottom, safeArea?.bottom == MetricPlayerView.anotherParametr ? MetricPlayerView.paddingSafeArea : safeArea?.bottom)
                 }
-                Spacer(minLength: 0)
+                Spacer(minLength: MetricPlayerView.spacerMinLenght)
             }
-            .frame(height: expand ? nil : 0)
-            .opacity(expand ? 1 : 0)
+            .frame(height: expand ? nil : MetricPlayerView.anotherParametr)
+            .opacity(Double(expand ? MetricPlayerView.opacityCapsule : MetricPlayerView.anotherParametr))
         }
         
-        .frame(maxHeight: expand ?.infinity : 70)
+        .frame(maxHeight: expand ?.infinity : MetricPlayerView.maxHeightFrame)
         .background(
-            VStack(spacing: 0) {
+            VStack(spacing: MetricPlayerView.spacerMinLenght) {
                 BlurView()
                 Divider()
-            }.onTapGesture(count: 2) {
+            }.onTapGesture(count: Int(MetricPlayerView.count)) {
                 withAnimation(.spring()){expand = true}
             }
         )
-        .cornerRadius(expand ? 20 : 0)
-        .offset(y: expand ? 0 : -48)
+        .cornerRadius(expand ? MetricPlayerView.cornerRaduis : MetricPlayerView.anotherParametr)
+        .offset(y: expand ? MetricPlayerView.anotherParametr : MetricPlayerView.offsetView)
         .offset(y: offset)
         .gesture(DragGesture().onEnded(onended(value:)).onChanged(onchanged(value:)))
         .ignoresSafeArea()
@@ -175,19 +189,67 @@ struct PlayerView: View {
     
     func onchanged(value: DragGesture.Value) {
         
-        if value.translation.height > 0 && expand {
+        if value.translation.height > MetricPlayerView.anotherParametr && expand {
             offset = value.translation.height
         }
     }
     
     func onended(value: DragGesture.Value) {
         
-        withAnimation(.interactiveSpring(response: 0.2, dampingFraction: 0.95, blendDuration: 0.95)) {
+        withAnimation(.interactiveSpring(response: Double(MetricPlayerView.response), dampingFraction: Double(MetricPlayerView.dampingFraction), blendDuration: Double(MetricPlayerView.blendDuration))) {
             
             if value.translation.height > height {
                 expand = false
             }
-            offset = 0
+            offset = MetricPlayerView.anotherParametr
         }
     }
+}
+
+struct MetricPlayerView {
+    
+    static let heightScreen: CGFloat = 3
+    static let volume: CGFloat = 0
+    static let offset: CGFloat = 0
+    static let widthFrameCapsule: CGFloat = 30
+    static let heightFrameCapsule: CGFloat = 6
+    static let anotherParametr: CGFloat = 0
+    static let opacityCapsule: CGFloat = 1
+    static let paddingCapsule: CGFloat = 50
+    static let spacerMinLenght: CGFloat = 0
+    static let widthImage: CGFloat = 40
+    static let heightImage: CGFloat = 40
+    static let cornerRadiusImage: CGFloat = 7
+    static let widthImagePlayFill: CGFloat = 18
+    static let heightImagePlayFill: CGFloat = 18
+    static let widthFrameSpacer: CGFloat = 13
+    static let widthImageForwardFill: CGFloat = 25
+    static let heightImageForwardFill: CGFloat = 20
+    static let padding: CGFloat = 5
+    static let spacerFrameHeight: CGFloat = 60
+    static let spacingHStack: CGFloat = 190
+    static let sizeFontTextPeaches: CGFloat = 25
+    static let sizeFontTextJustin: CGFloat = 23
+    static let sizeFontImageEllipsis: CGFloat = 30
+    static let sizeCircle: CGFloat = 7
+    static let offsetCircle: CGFloat = 28
+    static let heightCapsule: CGFloat = 4
+    static let paddingCapsuleLeading: CGFloat = 20
+    static let paddingCapsuleTrailing: CGFloat = 26
+    static let spacingHStackText: CGFloat = 310
+    static let sizeFontText: CGFloat = 10
+    static let frameSpacer: CGFloat = 45
+    static let spacingHStackPlay: CGFloat = 50
+    static let spacerFrameHeightSpeaker: CGFloat = 35
+    static let spacinhHStackSpeaker: CGFloat = 15
+    static let paddingImage: CGFloat = 7
+    static let spacingTabBarPlayer: CGFloat = 70
+    static let paddingSafeArea: CGFloat = 15
+    static let maxHeightFrame: CGFloat = 70
+    static let count: CGFloat = 2
+    static let cornerRaduis: CGFloat = 20
+    static let offsetView: CGFloat = -48
+    static let response: CGFloat = 0.2
+    static let dampingFraction: CGFloat = 0.95
+    static let blendDuration: CGFloat = 0.95
 }

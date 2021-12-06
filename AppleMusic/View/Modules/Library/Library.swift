@@ -23,17 +23,17 @@ struct Library: View {
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundColor(.red)
-                                .frame(width: 25, height: 25)
-                                .padding(9)
+                                .frame(width: MetricLibrary.widthImage, height: MetricLibrary.heightImage)
+                                .padding(MetricLibrary.paddingImage)
                             Text(model.title)
                                 .foregroundColor(.black)
-                                .font(.system(size: 23))
+                                .font(.system(size: MetricLibrary.sizeFontText))
                                 .fontWeight(.medium)
                         }
                     }
                     .onMove(perform: move)
                 }
-                .frame(height: 640)
+                .frame(height: MetricLibrary.heightFrame)
                 .listStyle(PlainListStyle())
             }
             .environment(\.editMode, $isEditMode)
@@ -49,4 +49,13 @@ struct Library_Previews: PreviewProvider {
     static var previews: some View {
         Library()
     }
+}
+
+struct MetricLibrary {
+    
+    static let widthImage: CGFloat = 25
+    static let heightImage: CGFloat = 25
+    static let paddingImage: CGFloat = 9
+    static let sizeFontText: CGFloat = 23
+    static let heightFrame: CGFloat = 640
 }

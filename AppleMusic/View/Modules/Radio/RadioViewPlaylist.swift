@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct RadioViewPlaylist: View {
-    
     @State private var modelsRadio = ModelRadio.data
-    
     var rows = [
-        GridItem(.fixed(320))
+        GridItem(.fixed(MetricRadioViewPlaylist.sizeItem))
     ]
     
     var body: some View {
@@ -23,21 +21,21 @@ struct RadioViewPlaylist: View {
                         Text(modelRadio.titleRadiostation)
                             .foregroundColor(.secondary)
                             .fontWeight(.medium)
-                            .font(.system(size: 18))
+                            .font(.system(size: MetricRadioViewPlaylist.sizeFontTextSubtitle))
                         Text(modelRadio.title)
                             .foregroundColor(.black)
                             .fontWeight(.regular)
-                            .font(.system(size: 23))
+                            .font(.system(size: MetricRadioViewPlaylist.sizeFontTextTitle))
                         Text(modelRadio.subtitle)
                             .foregroundColor(.secondary)
                             .fontWeight(.medium)
-                            .font(.system(size: 18))
+                            .font(.system(size: MetricRadioViewPlaylist.sizeFontTextSubtitle))
                         Spacer()
-                            .frame(height: 15)
+                            .frame(height: MetricRadioViewPlaylist.heightFrameSpacer)
                         Image(modelRadio.image)
                             .resizable()
-                            .frame(width: 370)
-                            .cornerRadius(10)
+                            .frame(width: MetricRadioViewPlaylist.widthFrameImage)
+                            .cornerRadius(MetricRadioViewPlaylist.cornerRadiusImage)
                     }
                 }
             }
@@ -49,4 +47,14 @@ struct RadioViewPlaylist_Previews: PreviewProvider {
     static var previews: some View {
         RadioViewPlaylist()
     }
+}
+
+struct MetricRadioViewPlaylist {
+    
+    static let sizeItem: CGFloat = 320
+    static let sizeFontTextTitle: CGFloat = 23
+    static let sizeFontTextSubtitle: CGFloat = 18
+    static let heightFrameSpacer: CGFloat = 15
+    static let widthFrameImage: CGFloat = 370
+    static let cornerRadiusImage: CGFloat = 10
 }

@@ -7,14 +7,12 @@
 
 import SwiftUI
 
-
 struct ModelRadio: Identifiable, Hashable {
     let id = UUID()
     var image: String
     var title: String
     var subtitle: String
     var titleRadiostation: String
-   
 }
 
 extension ModelRadio {
