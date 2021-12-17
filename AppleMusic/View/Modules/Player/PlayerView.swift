@@ -24,19 +24,25 @@ struct PlayerView: View {
                 .opacity(Double(expand ? MetricPlayerView.opacityCapsule : MetricPlayerView.anotherParametr))
                 .padding(.top, expand ? safeArea?.top : MetricPlayerView.anotherParametr)
                 .padding(.vertical, expand ? MetricPlayerView.paddingCapsule : MetricPlayerView.anotherParametr)
+            
             HStack {
+                
                 if expand {Spacer(minLength: MetricPlayerView.spacerMinLenght)}
                 Image("картинка")
                     .resizable()
                     .frame(width: expand ? height : MetricPlayerView.widthImage, height: expand ? height : MetricPlayerView.heightImage)
                     .scaledToFit()
                     .cornerRadius(MetricPlayerView.cornerRadiusImage)
+                
                 if !expand {
                     Text("Justin Bieber - Peaches")
                         .matchedGeometryEffect(id: "Label", in: animation)
                 }
+                
                 Spacer(minLength: MetricPlayerView.spacerMinLenght)
+                
                 if !expand {
+                    
                     Button(action: {
                         self.showDetails.toggle()
                     }, label: {
@@ -46,8 +52,10 @@ struct PlayerView: View {
                             .frame(width: MetricPlayerView.widthImagePlayFill, height: MetricPlayerView.heightImagePlayFill)
                             .scaledToFit()
                     })
+                    
                     Spacer()
                         .frame(width: MetricPlayerView.widthFrameSpacer)
+                    
                     Button(action: {
                         self.showDetails.toggle()
                     }, label: {
@@ -58,12 +66,15 @@ struct PlayerView: View {
                             .scaledToFit()
                     })
                     .padding(MetricPlayerView.padding)
-                }}
-                .padding()
+                }
+            }.padding()
+            
             VStack {
+                
                 if expand {
                     Spacer(minLength: MetricPlayerView.spacerMinLenght)
                         .frame(height: MetricPlayerView.spacerFrameHeight)
+                    
                     HStack(spacing: MetricPlayerView.spacingHStack) {
                         VStack(alignment: .leading) {
                             Text("Peaches")
@@ -76,6 +87,7 @@ struct PlayerView: View {
                                 .font(.system(size: MetricPlayerView.sizeFontTextJustin))
                                 .matchedGeometryEffect(id: "Label", in: animation)
                         }
+                        
                         Button(action: {
                             print("Нажата кнопка")
                         }, label: {
@@ -84,6 +96,7 @@ struct PlayerView: View {
                                 .font(.system(size: MetricPlayerView.sizeFontImageEllipsis))
                         })
                     }
+                    
                     HStack {
                         Circle()
                             .fill(Color.white)
@@ -96,6 +109,7 @@ struct PlayerView: View {
                             .padding(.trailing, MetricPlayerView.paddingCapsuleTrailing)
                         
                     }
+                    
                     HStack(spacing: MetricPlayerView.spacingHStackText) {
                         Text("0:00")
                             .foregroundColor(.gray)
@@ -106,9 +120,12 @@ struct PlayerView: View {
                             .font(.system(size: MetricPlayerView.sizeFontText))
                             .fontWeight(.regular)
                     }
+                    
                     Spacer()
                         .frame(height: MetricPlayerView.frameSpacer)
+                    
                     HStack(spacing: MetricPlayerView.spacingHStackPlay) {
+                        
                         Button(action: {
                             print("Нажата кнопка")
                         }, label: {
@@ -116,6 +133,7 @@ struct PlayerView: View {
                                 .font(.title)
                                 .foregroundColor(.primary)
                         })
+                        
                         Button(action: {
                             print("Нажата кнопка")
                         }, label: {
@@ -123,6 +141,7 @@ struct PlayerView: View {
                                 .font(.system(size: MetricPlayerView.widthImage))
                                 .foregroundColor(.primary)
                         })
+                        
                         Button(action: {
                             print("Нажата кнопка")
                         }, label: {
@@ -131,8 +150,10 @@ struct PlayerView: View {
                                 .foregroundColor(.primary)
                         })
                     }
+                    
                     Spacer(minLength: MetricPlayerView.spacerMinLenght)
                         .frame(height: MetricPlayerView.spacerFrameHeightSpeaker)
+                    
                     HStack(spacing: MetricPlayerView.spacinhHStackSpeaker) {
                         Image(systemName: "speaker.1.fill")
                             .padding(.leading, MetricPlayerView.paddingImage)
@@ -140,7 +161,9 @@ struct PlayerView: View {
                         Image(systemName: "speaker.wave.2.fill")
                             .padding(.trailing, MetricPlayerView.paddingImage)
                     }.padding()
+                    
                     HStack(spacing: MetricPlayerView.spacingTabBarPlayer) {
+                        
                         Button(action: {
                             print("Нажата кнопка")
                         }, label: {
@@ -148,6 +171,7 @@ struct PlayerView: View {
                                 .font(.title2)
                                 .foregroundColor(.primary)
                         })
+                        
                         Button(action: {
                             print("Нажата кнопка")
                         }, label: {
@@ -155,6 +179,7 @@ struct PlayerView: View {
                                 .font(.title2)
                                 .foregroundColor(.primary)
                         })
+                        
                         Button(action: {
                             print("Нажата кнопка")
                         }, label: {
@@ -165,12 +190,12 @@ struct PlayerView: View {
                     }
                     .padding(.bottom, safeArea?.bottom == MetricPlayerView.anotherParametr ? MetricPlayerView.paddingSafeArea : safeArea?.bottom)
                 }
+                
                 Spacer(minLength: MetricPlayerView.spacerMinLenght)
             }
             .frame(height: expand ? nil : MetricPlayerView.anotherParametr)
             .opacity(Double(expand ? MetricPlayerView.opacityCapsule : MetricPlayerView.anotherParametr))
         }
-        
         .frame(maxHeight: expand ?.infinity : MetricPlayerView.maxHeightFrame)
         .background(
             VStack(spacing: MetricPlayerView.spacerMinLenght) {
