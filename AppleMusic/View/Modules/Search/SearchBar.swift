@@ -25,6 +25,7 @@ struct SearchBar: View {
                         .frame(width: MetricSearchBar.widthFrameText, alignment: .leading)
                 }
             }
+            
             HStack {
                 TextField(searchTitle.searchMediateca, text: $text)
                     .padding(MetricSearchBar.paddingTextField)
@@ -50,7 +51,11 @@ struct SearchBar: View {
                                     Image(systemName: "xmark.circle.fill")
                                         .foregroundColor(Color(.white))
                                         .frame(minWidth: MetricSearchBar.frameMinWidthImage, maxWidth: .infinity, alignment: .trailing)
-                                        .padding(.trailing, MetricSearchBar.paddingFrameImage)})}})
+                                        .padding(.trailing, MetricSearchBar.paddingFrameImage)
+                                })
+                            }
+                        })
+                
                 if isEditing {
                     Button(action: {
                             self.isEditing = false
@@ -66,6 +71,7 @@ struct SearchBar: View {
                 }
             }
             .padding(MetricSearchBar.paddingHStack)
+            
             if isEditing {
                 SearchSongsMediateca()
                 if text.isEmpty {
@@ -88,7 +94,11 @@ struct SearchBar: View {
                 SearchAlbumSongs(text: $text)
             }
             else {
-                SearchViewCategories()
+                NavigationLink(
+                    destination: SearchDetailScreen(),
+                    label: {
+                        SearchViewRepresentable()
+                    })
             }
         }
         .offset(y: MetricSearchBar.offsetHStack)
