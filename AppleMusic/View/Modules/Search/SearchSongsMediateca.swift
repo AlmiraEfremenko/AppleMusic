@@ -24,6 +24,7 @@ struct SearchSongsMediateca: View {
                 .frame(width: MetricSearchSongsMedia.widthFrameButton, height: MetricSearchSongsMedia.heightFrameButton, alignment: .center)
                 .background(Color(.lightGray).brightness(Double(MetricSearchSongsMedia.backgroundButtonApple)))
                 .cornerRadius(MetricSearchSongsMedia.cornerRadiusButton)
+                
                 Button(action: {
                     self.showDetails.toggle()
                 }, label: {
