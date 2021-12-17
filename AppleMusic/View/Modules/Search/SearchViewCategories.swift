@@ -10,7 +10,8 @@ import SwiftUI
 struct SearchViewCategories: View {
     @ObservedObject var modelSearch = ModelSearch()
     var columns = [
-        GridItem(.adaptive(minimum: MetricSearchViewCategories.sizeItemMinimum, maximum: MetricSearchViewCategories.sizeItemMaximum))]
+        GridItem(.adaptive(minimum: MetricSearchViewCategories.sizeItemMinimum, maximum: MetricSearchViewCategories.sizeItemMaximum))
+    ]
     
     var body: some View {
         LazyVGrid(columns: columns, alignment: .leading) {
@@ -27,8 +28,9 @@ struct SearchViewCategories: View {
                             .resizable()
                             .frame(width: MetricSearchViewCategories.widthImage, height: MetricSearchViewCategories.heightImage)
                             .cornerRadius(MetricSearchViewCategories.cornerRadiusImage)
-                    }}
-                    .padding(MetricSearchViewCategories.paddingText)
+                    }
+                }
+                .padding(MetricSearchViewCategories.paddingText)
             }
         }
     }

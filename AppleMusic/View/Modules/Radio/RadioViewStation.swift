@@ -28,6 +28,7 @@ struct RadioViewStation: View {
                             .scaledToFit()
                             .frame(width: MetricRadioViewStation.widthImage)
                             .cornerRadius(MetricRadioViewStation.cornerRadiusImage)
+                        
                         VStack(alignment: .leading) {
                             Text(modelRadio.title)
                                 .foregroundColor(.black)
@@ -41,6 +42,7 @@ struct RadioViewStation: View {
                     }
                     .padding(.horizontal, MetricRadioViewStation.paddingHStack)
                     .padding(.vertical, MetricRadioViewStation.paddingHStack)
+                    
                     Divider()
                         .padding(.leading, MetricRadioViewStation.paddingDividerLeading)
                         .padding(.trailing, MetricRadioViewStation.paddingDividerTrailing)

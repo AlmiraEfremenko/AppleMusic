@@ -30,6 +30,7 @@ struct RadioViewPlaylist: View {
                             .foregroundColor(.secondary)
                             .fontWeight(.medium)
                             .font(.system(size: MetricRadioViewPlaylist.sizeFontTextSubtitle))
+                        
                         Spacer()
                             .frame(height: MetricRadioViewPlaylist.heightFrameSpacer)
                         Image(modelRadio.image)

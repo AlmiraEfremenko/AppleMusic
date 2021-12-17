@@ -10,17 +10,14 @@ import SwiftUI
 struct SearchView: View {
     @ObservedObject var modelSearch = ModelSearch()
     @State private var text = ""
+    @State var isIntegration = false
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack {
-                    SearchBar(text: $text)
-                }
+            SearchBar(text: $text)
                 .padding(MetricSearchView.paddingSearchView)
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
-            }
         }
         .accentColor(Color(.red))
     }

@@ -45,6 +45,7 @@ struct SearchDetailScreen: View {
                     }
                 }
                 .padding(.top, MetricDetailScreen.paddingHStack)
+                
                 HStack(spacing: MetricDetailScreen.spacingHStack) {
                     Text("Станции")
                         .font(.system(size: MetricDetailScreen.sizeFontTextTitle))
@@ -55,6 +56,7 @@ struct SearchDetailScreen: View {
                         .foregroundColor(.red)
                         .fontWeight(.medium)
                 }
+                
                 HStack {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: rows) {

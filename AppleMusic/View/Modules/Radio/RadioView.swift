@@ -11,15 +11,19 @@ struct RadioView: View {
     var body: some View {
         NavigationView {
             ScrollView {
+                
                 Divider()
                     .padding(.leading, MetricRadioView.paddingDividerLeading)
                     .padding(.trailing, MetricRadioView.paddingDividerTrailing)
+                
                 VStack {
                     RadioViewPlaylist()
                         .padding(MetricRadioView.paddingView)
+                    
                     Divider()
                         .padding(.leading, MetricRadioView.paddingDividerLeading)
                         .padding(.trailing, MetricRadioView.paddingDividerTrailing)
+                    
                     Spacer()
                         .frame(height: MetricRadioView.heightFrameSpacer)
                     RadioViewStation()
