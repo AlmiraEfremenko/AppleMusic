@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @ObservedObject var modelSearch = ModelSearch()
     @ObservedObject var searchTitle = ModelSearch()
     @Binding var text: String
     @Binding var isEditing: Bool
