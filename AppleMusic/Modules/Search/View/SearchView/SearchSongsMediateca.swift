@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SearchSongsMediateca: View {
-    @State var isShowRecentSearch = false
     @State private var showDetails = false
     
     var body: some View {
