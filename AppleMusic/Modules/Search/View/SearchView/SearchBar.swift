@@ -11,7 +11,7 @@ struct SearchBar: View {
     @ObservedObject var modelSearch = ModelSearch()
     @ObservedObject var searchTitle = ModelSearch()
     @Binding var text: String
-    @State private var isEditing = false
+    @Binding var isEditing: Bool
     @State private var showDetails = false
     
     var body: some View {
@@ -58,6 +58,7 @@ struct SearchBar: View {
                 
                 if isEditing {
                     Button(action: {
+                            text = ""
                             self.isEditing = false
                             UIApplication.shared.dismissKeyboard()})
                     {
@@ -91,17 +92,8 @@ struct SearchBar: View {
                     .padding(.top, MetricSearchBar.paddingHStackResentDelete)
                 }
                 Divider()
-                SearchAlbumSongs(text: $text)
-            }
-            else {
-                NavigationLink(
-                    destination: SearchDetailScreen(),
-                    label: {
-                        SearchViewRepresentable()
-                    })
             }
         }
-        .offset(y: MetricSearchBar.offsetHStack)
     }
 }
 
@@ -113,7 +105,7 @@ extension UIApplication {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(text: .constant(""))
+        SearchBar(text: .constant(""), isEditing: .constant(false))
     }
 }
 
@@ -133,5 +125,4 @@ struct MetricSearchBar {
     static let sizeFontTextRecentSearch: CGFloat = 17
     static let sizeFontTextDelete: CGFloat = 16
     static let paddingHStackResentDelete: CGFloat = 23
-    static let offsetHStack: CGFloat = 30
 }
