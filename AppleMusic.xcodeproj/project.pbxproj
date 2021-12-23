@@ -81,27 +81,125 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		043C4E64270F7C09001247EF /* Model */ = {
+		0437EBA42774686B0062C7AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0446BF8327188568004812FE /* ModelRadio.swift */,
+				043A557F2719CC88002C5BD7 /* ModelRadioStation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0437EBA5277468780062C7AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0446BF8127187020004812FE /* RadioView.swift */,
+				043A557D27194858002C5BD7 /* RadioViewStation.swift */,
+				043A557B27194661002C5BD7 /* RadioViewPlaylist.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0437EBA6277469370062C7AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0439BC63270DD8CB001E0EBE /* Model.swift */,
-				0446BF8327188568004812FE /* ModelRadio.swift */,
-				043A557F2719CC88002C5BD7 /* ModelRadioStation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0437EBA7277469460062C7AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0439BC5F270DD790001E0EBE /* Library.swift */,
+				045261422711C4CC00967D8A /* LibraryView.swift */,
+				043C4E62270F4290001247EF /* MediatecaMusic.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0437EBA82774698F0062C7AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				04F9F6C5274A313500C501E2 /* ModelSearch.swift */,
 				0441226C276B99B400404B27 /* ModelSearchData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0437EBA9277469960062C7AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0437EBAE27746B8C0062C7AA /* SearchView */,
+				0437EBAA277469DA0062C7AA /* SearchViewIntegration */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0437EBAA277469DA0062C7AA /* SearchViewIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				0437EBAD27746B3E0062C7AA /* SearchViewIntegrationHeader */,
+				0437EBAC27746B0B0062C7AA /* SearchViewIntegrationCell */,
+				0437EBAB27746AF20062C7AA /* SearchViewIntegrationController */,
+			);
+			path = SearchViewIntegration;
+			sourceTree = "<group>";
+		};
+		0437EBAB27746AF20062C7AA /* SearchViewIntegrationController */ = {
+			isa = PBXGroup;
+			children = (
+				04412266276B98AC00404B27 /* SearchViewController.swift */,
+				0441226E276B9C3500404B27 /* SearchViewRepresentable.swift */,
+			);
+			path = SearchViewIntegrationController;
+			sourceTree = "<group>";
+		};
+		0437EBAC27746B0B0062C7AA /* SearchViewIntegrationCell */ = {
+			isa = PBXGroup;
+			children = (
+				0441226A276B98ED00404B27 /* SearchViewCell.swift */,
+			);
+			path = SearchViewIntegrationCell;
+			sourceTree = "<group>";
+		};
+		0437EBAD27746B3E0062C7AA /* SearchViewIntegrationHeader */ = {
+			isa = PBXGroup;
+			children = (
+				04412268276B98D900404B27 /* SearchViewHeader.swift */,
+			);
+			path = SearchViewIntegrationHeader;
+			sourceTree = "<group>";
+		};
+		0437EBAE27746B8C0062C7AA /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				04F9F6C1274A1D7C00C501E2 /* SearchView.swift */,
+				04F9F6C7274A820600C501E2 /* SearchBar.swift */,
+				043FFDBD275298F3002F3141 /* SearchDetailScreen.swift */,
+				04F9F6C3274A290100C501E2 /* SearchViewCategories.swift */,
+				04371DF4274D38370051E207 /* SearchSongsMediateca.swift */,
+				043AEE73274F882200CFD350 /* SearchAlbumSongs.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		0437EBAF27746D670062C7AA /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				044B6A08270C0B690079C32C /* TabViewAppleMusic.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		043C4E65270F7E80001247EF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				04F9F6C0274A16CF00C501E2 /* Search */,
-				0446BF8027186FF3004812FE /* Radio */,
-				0446BF7F27186F83004812FE /* Player */,
 				045261452711C5B200967D8A /* Library */,
-				044B6A08270C0B690079C32C /* TabViewAppleMusic.swift */,
-				044C40C6270B2C8800070918 /* ContentView.swift */,
+				0446BF7F27186F83004812FE /* Player */,
+				0446BF8027186FF3004812FE /* Radio */,
+				04F9F6C0274A16CF00C501E2 /* Search */,
+				0437EBAF27746D670062C7AA /* TableView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -118,9 +216,8 @@
 		0446BF8027186FF3004812FE /* Radio */ = {
 			isa = PBXGroup;
 			children = (
-				0446BF8127187020004812FE /* RadioView.swift */,
-				043A557B27194661002C5BD7 /* RadioViewPlaylist.swift */,
-				043A557D27194858002C5BD7 /* RadioViewStation.swift */,
+				0437EBA42774686B0062C7AA /* Model */,
+				0437EBA5277468780062C7AA /* View */,
 			);
 			path = Radio;
 			sourceTree = "<group>";
@@ -144,8 +241,9 @@
 		044C40C3270B2C8800070918 /* AppleMusic */ = {
 			isa = PBXGroup;
 			children = (
-				045261442711C5AB00967D8A /* View */,
+				043C4E65270F7E80001247EF /* Modules */,
 				044C40C4270B2C8800070918 /* AppleMusicApp.swift */,
+				044C40C6270B2C8800070918 /* ContentView.swift */,
 				044C40C8270B2C8C00070918 /* Assets.xcassets */,
 				044C40CD270B2C8C00070918 /* Info.plist */,
 				044C40CA270B2C8C00070918 /* Preview Content */,
@@ -161,21 +259,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		045261442711C5AB00967D8A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				043C4E64270F7C09001247EF /* Model */,
-				043C4E65270F7E80001247EF /* Modules */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		045261452711C5B200967D8A /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				0439BC5F270DD790001E0EBE /* Library.swift */,
-				043C4E62270F4290001247EF /* MediatecaMusic.swift */,
-				045261422711C4CC00967D8A /* LibraryView.swift */,
+				0437EBA6277469370062C7AA /* Model */,
+				0437EBA7277469460062C7AA /* View */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -183,16 +271,8 @@
 		04F9F6C0274A16CF00C501E2 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				04F9F6C1274A1D7C00C501E2 /* SearchView.swift */,
-				043FFDBD275298F3002F3141 /* SearchDetailScreen.swift */,
-				04F9F6C7274A820600C501E2 /* SearchBar.swift */,
-				043AEE73274F882200CFD350 /* SearchAlbumSongs.swift */,
-				04371DF4274D38370051E207 /* SearchSongsMediateca.swift */,
-				04F9F6C3274A290100C501E2 /* SearchViewCategories.swift */,
-				04412266276B98AC00404B27 /* SearchViewController.swift */,
-				0441226E276B9C3500404B27 /* SearchViewRepresentable.swift */,
-				04412268276B98D900404B27 /* SearchViewHeader.swift */,
-				0441226A276B98ED00404B27 /* SearchViewCell.swift */,
+				0437EBA82774698F0062C7AA /* Model */,
+				0437EBA9277469960062C7AA /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
