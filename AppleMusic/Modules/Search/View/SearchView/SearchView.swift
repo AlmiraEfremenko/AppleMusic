@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SearchView: View {
-    @ObservedObject var modelSearch = ModelSearch()
     @State private var text = ""
     @State private var isEditing = false
     
