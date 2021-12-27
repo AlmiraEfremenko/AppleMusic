@@ -187,8 +187,10 @@ struct PlayerView: View {
                                 .font(.title2)
                                 .foregroundColor(.primary)
                         })
+                        
                     }
                     .padding(.bottom, safeArea?.bottom == MetricPlayerView.anotherParametr ? MetricPlayerView.paddingSafeArea : safeArea?.bottom)
+                    .offset(y: MetricPlayerView.offsetHStackIcon)
                 }
                 
                 Spacer(minLength: MetricPlayerView.spacerMinLenght)
@@ -277,4 +279,5 @@ struct MetricPlayerView {
     static let response: CGFloat = 0.2
     static let dampingFraction: CGFloat = 0.95
     static let blendDuration: CGFloat = 0.95
+    static let offsetHStackIcon: CGFloat = -10
 }

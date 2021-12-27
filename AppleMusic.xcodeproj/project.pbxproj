@@ -17,7 +17,7 @@
 		043C4E63270F4290001247EF /* MediatecaMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C4E62270F4290001247EF /* MediatecaMusic.swift */; };
 		043FFDBE275298F3002F3141 /* SearchDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FFDBD275298F3002F3141 /* SearchDetailScreen.swift */; };
 		04412267276B98AC00404B27 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04412266276B98AC00404B27 /* SearchViewController.swift */; };
-		04412269276B98D900404B27 /* SearchViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04412268276B98D900404B27 /* SearchViewHeader.swift */; };
+		04412269276B98D900404B27 /* HeaderSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04412268276B98D900404B27 /* HeaderSearchView.swift */; };
 		0441226B276B98ED00404B27 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441226A276B98ED00404B27 /* SearchViewCell.swift */; };
 		0441226D276B99B400404B27 /* ModelSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441226C276B99B400404B27 /* ModelSearchData.swift */; };
 		0441226F276B9C3500404B27 /* SearchViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441226E276B9C3500404B27 /* SearchViewRepresentable.swift */; };
@@ -48,7 +48,7 @@
 		043C4E62270F4290001247EF /* MediatecaMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediatecaMusic.swift; sourceTree = "<group>"; };
 		043FFDBD275298F3002F3141 /* SearchDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailScreen.swift; sourceTree = "<group>"; };
 		04412266276B98AC00404B27 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		04412268276B98D900404B27 /* SearchViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewHeader.swift; sourceTree = "<group>"; };
+		04412268276B98D900404B27 /* HeaderSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSearchView.swift; sourceTree = "<group>"; };
 		0441226A276B98ED00404B27 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		0441226C276B99B400404B27 /* ModelSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSearchData.swift; sourceTree = "<group>"; };
 		0441226E276B9C3500404B27 /* SearchViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewRepresentable.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		0437EBAD27746B3E0062C7AA /* SearchViewIntegrationHeader */ = {
 			isa = PBXGroup;
 			children = (
-				04412268276B98D900404B27 /* SearchViewHeader.swift */,
+				04412268276B98D900404B27 /* HeaderSearchView.swift */,
 			);
 			path = SearchViewIntegrationHeader;
 			sourceTree = "<group>";
@@ -367,7 +367,7 @@
 				043FFDBE275298F3002F3141 /* SearchDetailScreen.swift in Sources */,
 				04F9F6C2274A1D7C00C501E2 /* SearchView.swift in Sources */,
 				043C4E63270F4290001247EF /* MediatecaMusic.swift in Sources */,
-				04412269276B98D900404B27 /* SearchViewHeader.swift in Sources */,
+				04412269276B98D900404B27 /* HeaderSearchView.swift in Sources */,
 				04F9F6C4274A290100C501E2 /* SearchViewCategories.swift in Sources */,
 				044B6A09270C0B690079C32C /* TabViewAppleMusic.swift in Sources */,
 				043A557C27194661002C5BD7 /* RadioViewPlaylist.swift in Sources */,

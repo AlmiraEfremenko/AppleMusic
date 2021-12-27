@@ -9,7 +9,7 @@ import UIKit
 
 class  SearchViewCell: UICollectionViewCell {
     
-    static let identifier = "SearchViewAppleMusic"
+    static let identifier = "SearchViewCell"
     
     lazy var image: UIImageView = {
         let image = UIImageView()

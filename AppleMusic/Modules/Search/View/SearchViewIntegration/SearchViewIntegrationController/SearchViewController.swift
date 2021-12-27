@@ -48,7 +48,7 @@ class SearchViewController: UIViewController {
             heightDimension: .absolute(MetricSearchViewController.heightDimension))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: HeaderSearchView.identifier,
+            elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top)
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(MetricSearchViewController.fractionalWidth),
